@@ -2,6 +2,7 @@ package com.crud.demo.config;
 
 import com.crud.demo.component.LoginHandlerInterceptor;
 import com.crud.demo.component.MyLocaleResolver;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //可以扩展springMVC的功能
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //浏览器发送/atguigu，会直接映射到success
@@ -50,4 +52,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public LocaleResolver localeResolver(){
         return new MyLocaleResolver();
     }
+
+
+
 }
